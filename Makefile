@@ -1,6 +1,6 @@
 # Makefile for repository tasks
 
-.PHONY: sync-nushell-config
+.PHONY: sync-nushell-config sync-vimrc
 
 # Copy nushell configuration files into the user's nushell config directory.
 # This mirrors the behavior in install.sh: create ~/.config/nushell and copy
@@ -14,3 +14,5 @@ sync-nushell-config:
 	cp -a config.nu env.nu "$$dest/"; \
 	echo "Copied config.nu and env.nu to $$dest"
 
+sync-vimrc:
+	cp -a .vimrc "$(HOME)"
